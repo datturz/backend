@@ -27,6 +27,7 @@ router.post('/product', function (req, res) {
         let quantity = req.body.quantity
         var file = req.files.product_gambar;
         var product_gambar = file.name;
+        var tmpFilePath = `http://localhost:3006/public/assets/${product_name}`
         file.mv(".././public/assets/img/" + product_gambar, function (err) {
             if (err) {
                 console.log(err)
